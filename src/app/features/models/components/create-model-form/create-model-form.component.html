@@ -1,0 +1,15 @@
+<form [formGroup]="form" (submit)="onFormSubmit()">
+    <!-- Name Input -->
+
+    BrandId: <input type="number" formControlBrandId="brandId" />
+    <br>
+    Name: <input type="text" formControlName="name" />
+    <br>
+    ModelYear: <input type="number" formControlModelYear="modelYear" />
+    <br>
+    Image: <input type="text" formControlImage="imageUrl" />
+    <br>
+    Dailyprice: <input type="text" formControlDailyprice="dailyprice" />
+  
+    <button type="submit">Submit</button>
+  </form>
