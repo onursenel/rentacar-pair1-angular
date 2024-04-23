@@ -3,21 +3,28 @@ import { CustomerListItemDto } from '../../models/customer-list-item-dto';
 import { CustomersApiService } from '../../services/customersApi.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { NavbarComponent } from '../../../../shared/components/navbar/navbar.component';
+import { FooterComponent } from '../../../../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-customers-list',
   templateUrl: './customers-list.component.html',
   styleUrls: ['./customers-list.component.scss'],
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    NavbarComponent,
+    FooterComponent
+    ],
 })
 export class CustomersListComponent implements OnInit {
-  @Output() selectBrand = new EventEmitter<number | null>();
+  @Output() selectCustomer = new EventEmitter<number | null>();
 
   list: Array<CustomerListItemDto> = [];
 
   constructor(
-    private brandsService: CustomersApiService,
+    private customerService: CustomersApiService,
     private change: ChangeDetectorRef
   ) {}
 
@@ -26,8 +33,8 @@ export class CustomersListComponent implements OnInit {
   }
 
   getList() {
-    this.brandsService.getList().subscribe((brands) => {
-      this.list = brands;
+    this.customerService.getList().subscribe((customers) => {
+      this.list = customers;
       this.change.markForCheck();
     });
   }

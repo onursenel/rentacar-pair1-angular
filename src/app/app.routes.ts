@@ -9,6 +9,7 @@ import { UpdateBrandPageComponent } from './routers/update-brand-page/update-bra
 import { CreateModelPageComponent } from './routers/create-model-page/create-model-page.component';
 import { ModelDetailsPageComponent } from './routers/model-details-page/model-details-page.component';
 import { CustomersListComponent } from './features/customers/components/customers-list/customers-list.component';
+import { RentalsListComponent } from './features/rentals/components/rentals-list/rentals-list/rentals-list.component';
 
 export const routes: Routes = [
   // Home
@@ -42,6 +43,11 @@ export const routes: Routes = [
   {
     path: 'customers',
     component: CustomersListComponent,
+  },
+
+  {
+    path: 'rentals',
+    component: RentalsListComponent,
   },
 
   // Create Brand Page
