@@ -7,6 +7,7 @@ import { CreateBrandPageComponent } from './routers/create-brand-page/create-bra
 import { UpdateBrandFormComponent } from './features/brands/components/update-brand-form/update-brand-form.component';
 import { UpdateBrandPageComponent } from './routers/update-brand-page/update-brand-page.component';
 import { CreateModelPageComponent } from './routers/create-model-page/create-model-page.component';
+import { ModelDetailsPageComponent } from './routers/model-details-page/model-details-page.component';
 
 export const routes: Routes = [
   // Home
@@ -24,7 +25,12 @@ export const routes: Routes = [
       {
         path: "models", // /home/models
         component: HomePageComponent,
-      }
+      },
+      {
+        path: 'models/:modelId', // /home/models/1
+        // : ile başlayanlar route parametresi olur.
+        component: ModelDetailsPageComponent,
+      },
     ]
   },
   // Test Page

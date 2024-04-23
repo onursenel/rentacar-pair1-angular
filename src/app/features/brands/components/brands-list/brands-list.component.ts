@@ -24,7 +24,6 @@ export class BrandsListComponent implements OnInit {
    * @returns brand id or null
    */
   @Output() selectBrand = new EventEmitter<number | null>();
-  
   // Event oluşturabilmek için EventEmitter sınıfını kullanıyoruz.
   // Angular'ın bu eventi tanıyabilmesi için @Output() dekoratörünü kullanıyoruz.
 
@@ -49,8 +48,4 @@ export class BrandsListComponent implements OnInit {
   onBrandClick(id: number | null) {
     this.selectBrand.emit(id);
   }
-
-  
-
-  
 }

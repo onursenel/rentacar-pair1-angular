@@ -3,8 +3,8 @@ import { Injectable, model } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ModelListItemDto } from '../models/model-list-item-dto';
 import { PostModelRequest } from '../models/post-model-request';
-import { PostBrandResponse } from '../../brands/models/post-brand-response';
 import { PostModelResponse } from '../models/post-model-response';
+import { ModelDetailsDto } from '../models/model-details-dto';
 
 @Injectable({
   providedIn: 'root',
@@ -14,10 +14,14 @@ export class ModelsApiService {
 
   getList(
     brandId: number | null = null,
-    searchBrandName: string | null = null
+    searchBrandName: string | null = null,
+    pageIndex: number = 0,
+    pageSize: number = 10
   ): Observable<ModelListItemDto[]> {
     const requestQueryParams: any = {
       // brandId: brandId
+      _page: pageIndex + 1,
+      _limit: pageSize,
     };
     if (brandId !== null) requestQueryParams.brandId = brandId;
     if (searchBrandName) requestQueryParams.name_like = searchBrandName;
@@ -27,6 +31,9 @@ export class ModelsApiService {
     });
   }
 
+  getById(id: number): Observable<ModelDetailsDto> {
+    return this.http.get<ModelDetailsDto>(`http://localhost:3000/models/${id}`);
+  }
   postModel(model: PostModelRequest): Observable<PostModelResponse> {
     return this.http.post<PostModelResponse>(
       'http://localhost:3000/models',

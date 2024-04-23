@@ -1,11 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { HomePageComponent } from '../../../routers/home-page/home-page.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [
     CommonModule,
+    HomePageComponent,
+    RouterModule
+    
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',

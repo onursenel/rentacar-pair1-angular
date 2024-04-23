@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* Sayfayı yatayda ortala */
+  align-items: center; /* Sayfayı dikeyde ortala */
+  height: 100vh; /* Sayfanın tamamını kapla */
+}
+
+.card {
+  margin: 0 5rem; /* Sağdan ve soldan 5rem'lik boşluklar */
+}

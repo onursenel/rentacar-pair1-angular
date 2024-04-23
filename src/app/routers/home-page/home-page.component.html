@@ -1,13 +1,19 @@
-<h1>Rent A Car</h1>
-<p>Find the best car for you!</p>
-
-<app-brands-list (selectBrand)="onBrandSelect($event)"></app-brands-list>
 <!-- $event : event'in verdiği veriyi almamızı sağlayan özel bir keyword. -->
 <hr />
 
-Search: <input type="text" [(ngModel)]="searchBrandName" />
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <app-brands-list (selectBrand)="onBrandSelect($event)"></app-brands-list>
+    </div>
+    <div class="col">
+      Search the Models: <input type="text" [(ngModel)]="searchBrandName" />
+      <app-models-list [brandId]="selectedBrandId" [searchBrandName]="searchBrandName"></app-models-list>
+      
+    </div>
+  </div>
+</div>
+
+
 <!-- FormsModule ile gelen ngModel benim için input ile state'i birbirine iki yönlü atama olacak şekilde bağlamama yardımcı oluyor -->
-<app-models-list
-  [brandId]="selectedBrandId"
-  [searchBrandName]="searchBrandName"
-></app-models-list>
