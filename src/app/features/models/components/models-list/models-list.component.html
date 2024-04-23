@@ -1,24 +1,32 @@
-<div class="card" style="width: 18rem;">
-  <ul class="list-group list-group-flush">
-    <li *ngFor="let item of list; let i = index">
-      <a routerLink="/home/models/{{ item.id }}">
-        {{ item.name }}
-        <!-- {{ i }} -->
-      </a>
-    </li>
 
-  </ul>
-  <ul>
-    <button type="button" (click)="onPageChange(pageIndex - 1)" [disabled]="pageIndex === 0">
-      Prev
-    </button>
-    {{ pageIndex + 1 }}
-    <button type="button" (click)="onPageChange(pageIndex + 1)" [disabled]="!hasPageNext">
-      Next
-    </button>
-
-  </ul>
+<div class="container text-center">
+  <div class="row">
+    <div class="col" *ngFor="let item of list; let i = index">
+      <div class="card" style="width: 18rem;" >
+          <img src={{item.imageUrl}} class="card-img-top" alt="...">
+          
+          <div class="card-body" >
+              
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text">{{item.dailyPrice}} TL</p>
+            <p class="card-text">{{item.modelYear}} Model</p>
+            <a class="btn btn-primary" routerLink="/home/models/{{ item.id }}">
+              Model Details
+            </a>
+          </div>
+        </div>
+    </div>
+  </div>
 </div>
+
+<button type="button" (click)="onPageChange(pageIndex - 1)" [disabled]="pageIndex === 0">
+  Prev
+</button>
+{{ pageIndex + 1 }}
+<button type="button" (click)="onPageChange(pageIndex + 1)" [disabled]="!hasPageNext">
+  Next
+</button>
+
 
 
 

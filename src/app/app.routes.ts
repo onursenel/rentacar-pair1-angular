@@ -8,6 +8,7 @@ import { UpdateBrandFormComponent } from './features/brands/components/update-br
 import { UpdateBrandPageComponent } from './routers/update-brand-page/update-brand-page.component';
 import { CreateModelPageComponent } from './routers/create-model-page/create-model-page.component';
 import { ModelDetailsPageComponent } from './routers/model-details-page/model-details-page.component';
+import { CustomersListComponent } from './features/customers/components/customers-list/customers-list.component';
 
 export const routes: Routes = [
   // Home
@@ -38,11 +39,18 @@ export const routes: Routes = [
     path: 'layout-test',
     component: TestPageComponent
   },
+  {
+    path: 'customers',
+    component: CustomersListComponent,
+  },
+
   // Create Brand Page
   {
     path: 'brands/create',
     component: CreateBrandPageComponent,
   },
+
+
 
   {
     path: 'models/create',

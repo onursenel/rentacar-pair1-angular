@@ -24,7 +24,7 @@ export class ModelsListComponent implements OnInit, OnChanges {
   //   return this.list.filter((item) => item.brandId === this.brandId);
   // }
   pageIndex: number = 0;
-  private static pageSize: number = 5;
+  private static pageSize: number = 3;
   hasPageNext: boolean = true;
 
   constructor(

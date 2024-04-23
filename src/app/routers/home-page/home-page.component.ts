@@ -5,6 +5,7 @@ import { MainLayoutComponent } from '../../shared/layouts/main-layout/main-layou
 import { ModelsListComponent } from '../../features/models/components/models-list/models-list.component';
 import { BrandsListComponent } from '../../features/brands/components/brands-list/brands-list.component';
 import { FormsModule } from '@angular/forms';
+import { CustomersListComponent } from '../../features/customers/components/customers-list/customers-list.component';
 
 @Component({
   selector: 'app-home-page',
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     MainLayoutComponent,
     ModelsListComponent,
     BrandsListComponent,
+    CustomersListComponent
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',

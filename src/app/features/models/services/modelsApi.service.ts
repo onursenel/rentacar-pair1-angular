@@ -16,7 +16,7 @@ export class ModelsApiService {
     brandId: number | null = null,
     searchBrandName: string | null = null,
     pageIndex: number = 0,
-    pageSize: number = 10
+    pageSize: number = 3
   ): Observable<ModelListItemDto[]> {
     const requestQueryParams: any = {
       // brandId: brandId
