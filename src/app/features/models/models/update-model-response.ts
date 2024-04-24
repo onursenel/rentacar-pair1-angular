@@ -1,4 +1,4 @@
-export interface PostModelRequest {
+export interface UpdateModelResponse {
     brandId:    number;
     name:       string;
     modelYear:  number;

@@ -1,20 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CreateBrandFormComponent } from '../../features/brands/components/create-brand-form/create-brand-form.component';
+import { UpdateModelFormComponent } from '../../features/models/components/update-model-form/update-model-form.component';
 import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 
 @Component({
-  selector: 'app-create-brand-page',
+  selector: 'app-update-model-page',
   standalone: true,
   imports: [
     CommonModule,
-    CreateBrandFormComponent,
+    UpdateModelFormComponent,
     NavbarComponent,
     FooterComponent
+
   ],
-  templateUrl: './create-brand-page.component.html',
-  styleUrl: './create-brand-page.component.scss',
+  templateUrl: './update-model-page.component.html',
+  styleUrl: './update-model-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CreateBrandPageComponent { }
+export class UpdateModelPageComponent { }

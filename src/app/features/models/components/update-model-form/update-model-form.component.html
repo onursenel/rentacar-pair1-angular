@@ -11,7 +11,6 @@
         aria-describedby="inputGroup-sizing-default"
       />
     </div>
-    <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched">{{ form.get("name")?.errors| appErrorMessageTs }}</div>
     <div class="input-group">
         <span class="input-group-text" id="inputGroup-sizing-default"
           >Image Url</span
@@ -58,6 +57,6 @@
         aria-describedby="inputGroup-sizing-default"
       />
     </div>
-    <button type="submit" class="btn btn-primary">Add Model</button>
+    <button type="submit" class="btn btn-primary">Update Model</button>
   </form>
   

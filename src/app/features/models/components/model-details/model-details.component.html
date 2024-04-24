@@ -3,10 +3,10 @@
 <div class="card" style="width: 18rem;">
     <img src={{modelDetails.imageUrl}} class="card-img-top" alt="...">
     <div class="card-body">
-      <h1 class="card-title">{{ modelDetails.brand.name }}</h1>
+      <h1 class="card-title">{{ modelDetails.brand.name | uppercase}}</h1>
       <h2 class="card-title">{{ modelDetails.name }}</h2>
       <p class="card-text">{{modelDetails.modelYear}} Years</p>
-      <p class="card-text">{{modelDetails.dailyPrice}} TL</p>
+      <p class="card-text">{{modelDetails.dailyPrice |appVatAdd:10 | currency:"₺"}} </p>
       <a href="#" class="btn btn-primary">Hemen Kirala!</a>
     </div>
   </div>

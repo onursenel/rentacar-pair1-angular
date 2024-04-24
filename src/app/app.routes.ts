@@ -10,6 +10,7 @@ import { CreateModelPageComponent } from './routers/create-model-page/create-mod
 import { ModelDetailsPageComponent } from './routers/model-details-page/model-details-page.component';
 import { CustomersListComponent } from './features/customers/components/customers-list/customers-list.component';
 import { RentalsListComponent } from './features/rentals/components/rentals-list/rentals-list/rentals-list.component';
+import { UpdateModelPageComponent } from './routers/update-model-page/update-model-page.component';
 
 export const routes: Routes = [
   // Home
@@ -61,6 +62,11 @@ export const routes: Routes = [
   {
     path: 'models/create',
     component: CreateModelPageComponent,
+  },
+
+  {
+    path: 'models/update',
+    component: UpdateModelPageComponent,
   },
 
 //  {

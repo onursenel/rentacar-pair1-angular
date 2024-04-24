@@ -1,0 +1,16 @@
+****pipes nedir?
+
+--Angular'da "pipes" (borular), veri dönüşümü ve formatlama için kullanılan bir yapıdır. 
+
+
+****pipes ne işe yarar?
+
+--yaygın veri dönüşümlerini ve formatlamalarını kolayca gerçekleştirmenizi sağlar.
+
+****avantajları nelerdir?
+
+--Kodun Daha Okunabilir Olması: Veri dönüşümü ve formatlama işlemleri bir boru hattı içinde yapıldığından, HTML dosyası daha temiz ve okunabilir olur.
+--Tekrar Kullanılabilirlik: Belirli bir dönüşümü veya formatı gerektiren yerlerde aynı boruyu tekrar kullanabilirsiniz.
+--Dinamik Veri Gösterimi: Kullanıcıların veri dönüşüm ve formatlamasını kontrol etmesine olanak tanır, bu da daha iyi bir kullanıcı deneyimi sağlar.
+--Performans Artışı: Angular boruları, veri dönüşümü işlemlerini optimize eder, böylece uygulamanın performansı artar.
+

@@ -1,30 +1,24 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { ModelsApiService } from '../../services/modelsApi.service';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
-import { PostModelRequest } from '../../models/post-model-request';
 import { BrandListItemDto } from '../../../brands/models/brand-list-item-dto';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ModelsApiService } from '../../services/modelsApi.service';
 import { BrandsApiService } from '../../../brands/services/brands-api.service';
-import { ErrorMessageTsPipe } from '../../../../core/pipes/error-message.ts.pipe';
+import { Router } from '@angular/router';
+import { UpdateModelRequest } from '../../models/update-model-request';
 
 @Component({
-  selector: 'app-create-model-form',
+  selector: 'app-update-model-form',
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule,
-    ErrorMessageTsPipe,
+    ReactiveFormsModule
   ],
-  templateUrl: './create-model-form.component.html',
-  styleUrl: './create-model-form.component.scss',
+  templateUrl: './update-model-form.component.html',
+  styleUrl: './update-model-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CreateModelFormComponent implements OnInit{
+export class UpdateModelFormComponent implements OnInit { 
   allBrands: Array<BrandListItemDto> = [];
 
 
@@ -41,7 +35,7 @@ export class CreateModelFormComponent implements OnInit{
     brandName: ['', [Validators.required]],
     imageUrl: ['', [Validators.required]],
     name: ['', [Validators.required]],
-    modelYear:['', [Validators.required]],
+    modelYear: ['', [Validators.required]],
     dailyPrice: ['', [Validators.required]],
   });
 
@@ -49,15 +43,16 @@ export class CreateModelFormComponent implements OnInit{
     private fb: FormBuilder,
     private modelApiService: ModelsApiService,
     private brandsApiService: BrandsApiService,
+    private router: Router,
     private change: ChangeDetectorRef
   ) { }
 
-  createModel() {
+  updateModel() {
     const brand = this.allBrands.find(
       (brand) => brand.name == this.form.value.brandName
     );
     console.log(brand);
-    const request: PostModelRequest = {
+    const request: UpdateModelRequest = {
       brandId: brand!.id,
       name: this.form.value.name,
       imageUrl: this.form.value.imageUrl,
@@ -68,7 +63,7 @@ export class CreateModelFormComponent implements OnInit{
     
     
 
-    this.modelApiService.postModel(request).subscribe({
+    this.modelApiService.putModel(request).subscribe({
       next: (response) => {
         console.info('Response:', response);
       },
@@ -92,6 +87,6 @@ export class CreateModelFormComponent implements OnInit{
       return;
     }
 
-    this.createModel();
+    this.updateModel();
   }
 }

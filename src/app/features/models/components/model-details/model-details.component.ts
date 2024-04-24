@@ -8,11 +8,15 @@ import {
   OnInit,
 } from '@angular/core';
 import { ModelDetailsDto } from '../../models/model-details-dto';
+import { VatAddPipe } from '../../../../core/pipes/vatAdd.pipe';
 
 @Component({
   selector: 'app-model-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    VatAddPipe
+  ],
   templateUrl: './model-details.component.html',
   styleUrl: './model-details.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
