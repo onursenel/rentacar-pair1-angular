@@ -4,6 +4,8 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { CreateModelPageComponent } from '../../../routers/create-model-page/create-model-page.component';
+import { WellcomeDirective } from '../../../core/directives/wellcome.directive';
+import { WellcomePageComponent } from '../../../routers/wellcome-page/wellcome-page.component';
 
 @Component({
   selector: 'app-main-layout',
@@ -13,7 +15,9 @@ import { CreateModelPageComponent } from '../../../routers/create-model-page/cre
     RouterModule,
     NavbarComponent,
     FooterComponent,
-    CreateModelPageComponent
+    CreateModelPageComponent,
+    WellcomeDirective,
+    WellcomePageComponent
   ],
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.scss',

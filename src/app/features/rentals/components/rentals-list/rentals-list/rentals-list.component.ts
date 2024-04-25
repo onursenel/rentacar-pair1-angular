@@ -4,6 +4,7 @@ import { RentalListItemDto } from '../../../models/rental-list-item-dto';
 import { RentalsApiService } from '../../../services/rentalsApi.service';
 import { NavbarComponent } from '../../../../../shared/components/navbar/navbar.component';
 import { FooterComponent } from '../../../../../shared/components/footer/footer.component';
+import { WellcomeDirective } from '../../../../../core/directives/wellcome.directive';
 
 @Component({
   selector: 'app-rentals-list',
@@ -11,7 +12,8 @@ import { FooterComponent } from '../../../../../shared/components/footer/footer.
   imports: [
     CommonModule,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    WellcomeDirective
   ],
   templateUrl: './rentals-list.component.html',
   styleUrl: './rentals-list.component.scss',

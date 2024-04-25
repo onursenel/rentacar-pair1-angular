@@ -11,6 +11,7 @@ import { PostModelRequest } from '../../models/post-model-request';
 import { BrandListItemDto } from '../../../brands/models/brand-list-item-dto';
 import { BrandsApiService } from '../../../brands/services/brands-api.service';
 import { ErrorMessageTsPipe } from '../../../../core/pipes/error-message.ts.pipe';
+import { NoCharacterInputDirective } from '../../../../core/directives/noCharacterInput.directive';
 
 @Component({
   selector: 'app-create-model-form',
@@ -19,6 +20,7 @@ import { ErrorMessageTsPipe } from '../../../../core/pipes/error-message.ts.pipe
     CommonModule,
     ReactiveFormsModule,
     ErrorMessageTsPipe,
+    NoCharacterInputDirective
   ],
   templateUrl: './create-model-form.component.html',
   styleUrl: './create-model-form.component.scss',

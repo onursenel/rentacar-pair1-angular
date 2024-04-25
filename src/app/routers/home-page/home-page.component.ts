@@ -6,6 +6,7 @@ import { ModelsListComponent } from '../../features/models/components/models-lis
 import { BrandsListComponent } from '../../features/brands/components/brands-list/brands-list.component';
 import { FormsModule } from '@angular/forms';
 import { CustomersListComponent } from '../../features/customers/components/customers-list/customers-list.component';
+import { WellcomeDirective } from '../../core/directives/wellcome.directive';
 
 @Component({
   selector: 'app-home-page',
@@ -17,7 +18,8 @@ import { CustomersListComponent } from '../../features/customers/components/cust
     MainLayoutComponent,
     ModelsListComponent,
     BrandsListComponent,
-    CustomersListComponent
+    CustomersListComponent,
+    WellcomeDirective
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',

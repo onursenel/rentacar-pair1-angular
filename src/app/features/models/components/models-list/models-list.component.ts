@@ -3,12 +3,15 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges
 import { RouterModule } from "@angular/router";
 import { ModelListItemDto } from "../../models/model-list-item-dto";
 import { ModelsApiService } from "../../services/modelsApi.service";
+import { ButtonDirective } from "../../../../core/directives/button.directive";
+import { MultipleDirective } from "../../../../core/directives/multiple.directive";
+import { WellcomeDirective } from "../../../../core/directives/wellcome.directive";
 
 
 @Component({
   selector: 'app-models-list',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule,ButtonDirective,MultipleDirective,WellcomeDirective],
   templateUrl: './models-list.component.html',
   styleUrl: './models-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -26,6 +29,7 @@ export class ModelsListComponent implements OnInit, OnChanges {
   pageIndex: number = 0;
   private static pageSize: number = 3;
   hasPageNext: boolean = true;
+i: any;
 
   constructor(
     private modelsApiService: ModelsApiService,

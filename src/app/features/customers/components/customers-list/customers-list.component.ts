@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from '../../../../shared/components/navbar/navbar.component';
 import { FooterComponent } from '../../../../shared/components/footer/footer.component';
+import { WellcomeDirective } from '../../../../core/directives/wellcome.directive';
 
 @Component({
   selector: 'app-customers-list',
@@ -15,7 +16,8 @@ import { FooterComponent } from '../../../../shared/components/footer/footer.com
     CommonModule,
     RouterModule,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    WellcomeDirective
     ],
 })
 export class CustomersListComponent implements OnInit {
