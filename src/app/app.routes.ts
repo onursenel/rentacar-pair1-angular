@@ -11,6 +11,7 @@ import { ModelDetailsPageComponent } from './routers/model-details-page/model-de
 import { CustomersListComponent } from './features/customers/components/customers-list/customers-list.component';
 import { RentalsListComponent } from './features/rentals/components/rentals-list/rentals-list/rentals-list.component';
 import { UpdateModelPageComponent } from './routers/update-model-page/update-model-page.component';
+import { attentionRouteGuard } from './shared/guards/AttentionRoute.guard';
 
 export const routes: Routes = [
   // Home
@@ -62,6 +63,9 @@ export const routes: Routes = [
   {
     path: 'models/create',
     component: CreateModelPageComponent,
+    canDeactivate:[
+      attentionRouteGuard
+    ],
   },
 
   {
