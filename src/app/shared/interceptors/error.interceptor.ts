@@ -1,5 +1,5 @@
 import { HttpInterceptorFn } from '@angular/common/http';
-import { Inject } from '@angular/core';
+import { inject } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { catchError } from 'rxjs';
 
@@ -7,16 +7,13 @@ import { catchError } from 'rxjs';
 
 export const errorInterceptor: HttpInterceptorFn = (req, next) => {
   
-  const toastr = Inject(ToastrService)
+  console.log(req);
+  const toastr = inject(ToastrService);
 
-  return next(req).pipe(   // rxjs pipe: Observable'ı manipüle etmek / araya girmek için kullanılır
-  catchError((err : any) => {
-
-
-  
-    toastr.error(err.message);
-  
-    throw err;
-  })
-);
+  return next(req).pipe(
+    catchError((err: any) => {
+      toastr.error(err.message);
+      throw err;
+    })
+  );
 };
